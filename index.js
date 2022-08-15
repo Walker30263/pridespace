@@ -76,6 +76,11 @@ function generatePageHTML(flagColors) {
     body {
       overscroll-behavior: contain;
     }
+
+    a {
+      color: inherit;
+      font-weight: bold;
+    }
     
     #canvas {
       width: 100vw;
@@ -180,8 +185,8 @@ function generatePageHTML(flagColors) {
     
     var moveRainbow = new function() {
     	var paths = [];
-    	var colors = ${JSON.stringify(flagColors.reverse())};
-    	for (var i = 0; i < colors.length; i++) {
+    	var colors = ${JSON.stringify(flagColors)};
+    	for (var i = colors.length - 1; i >= 0; i--) {
     		var path = new Path({
     			fillColor: colors[i]
     		});
