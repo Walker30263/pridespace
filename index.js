@@ -10,6 +10,7 @@ let flagColors = {
   "bi": ["#d70071", "#9c4e97", "#0035aa"],
   "pan": ["#ff218c", "#ffd800", "#21b1ff"],
   "omni": ["#fe9ace", "#ff53bf", "#200044", "#6760fe", "#8ea6ff"],
+  "asexual": ["#000000", "#a3a3a3", "#ffffff", "#800080"],
   "transgender": ["#5bcffb", "#f5abb9", "#ffffff", "#f5abb9", "#5bcffb"],
   "enby": ["#fcf431", "#ffffff", "#9d59d2", "#2c2c2c"],
   "german": ["#2c2c2c", "#dd0000", "#ffcc00"]
@@ -36,7 +37,10 @@ app.get('/:flag', (req, res) => {
   }
   else if (flag == "omni" || flag == "omnisexual" || flag == "arisa") {
     res.send(generatePageHTML(flagColors.omni));
-  } 
+  }
+  else if (flag == "ace" || flag == "asexual") {
+    res.send(generatePageHTML(flagColors.asexual));
+  }
   else if (flag == "trans" || flag == "transgender") {
     res.send(generatePageHTML(flagColors.transgender));
   }
